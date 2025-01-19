@@ -17,6 +17,10 @@ const Statistics = (props) => {
   // console.log("neutral", neutral)
   // console.log("bad", bad)
 
+  if (good === 0 && neutral === 0 && bad === 0) {
+    return <p>No feedback given</p>
+  }
+
   // Calculate stats dynamically based on current state
   const total = good + neutral + bad
   const average = ((good * 1) + (neutral * 0) + (bad * -1)) / (good + neutral + bad)
