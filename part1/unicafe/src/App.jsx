@@ -6,7 +6,12 @@ const Button = ({onClick, text}) => <button onClick={onClick}>{text}</button>
 
 const Display = ({text, metric}) => {
   // console.log(text, metric)
-  return <p>{text} {metric}</p>
+  return (
+    <tr>
+      <td>{text}</td>
+      <td>{metric}</td>
+    </tr>
+  )
 }
 
 const Statistics = (props) => {
@@ -40,14 +45,14 @@ const Statistics = (props) => {
   // console.log(stats)
 
   return (
-    <>
+    <table>
       <Display text={stats[0].name} metric={stats[0].metric} />
       <Display text={stats[1].name} metric={stats[1].metric} />
       <Display text={stats[2].name} metric={stats[2].metric} />
       <Display text={stats[3].name} metric={stats[3].metric} />
       <Display text={stats[4].name} metric={stats[4].metric} />
       <Display text={stats[5].name} metric={stats[5].metric} />
-    </>
+    </table>
   )
 
 }
