@@ -8,8 +8,8 @@ const Display = ({ text, votes }) => {
       <p>{text}</p>
       {votes !== undefined && <p>Votes: {votes}</p>}
     </div>
-  );
-};
+  )
+}
 
 const Button = ({onClick, text}) => <button onClick={onClick}>{text}</button>
 
