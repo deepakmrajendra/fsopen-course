@@ -1,19 +1,28 @@
-import { useState } from 'react'
+import {useState, useEffect} from 'react'
 
 import Filter from './components/Filter'
 import PersonForm from './components/PersonForm'
-import Persons from './components/Persons'
+import Person from './components/Person'
+
+import personServices from './services/persons' 
 
 const App = () => {
-  const [persons, setPersons] = useState([
-    { name: 'Arto Hellas', number:'040-123456', id: 1 },
-    { name: 'Ada Lovelace', number: '39-44-5323523', id: 2 },
-    { name: 'Dan Abramov', number: '12-43-234345', id: 3 },
-    { name: 'Mary Poppendieck', number: '39-23-6423122', id: 4 }
-  ]) 
+  const [persons, setPersons] = useState([]) 
   const [newName, setNewName] = useState('')
   const [newPhone, setNewPhone] = useState('')
   const [searchTerm, setSearchTerm] = useState('')
+
+  const hook = () => {
+    // console.log('effect')
+    personServices
+      .getAll()
+      .then(initialPersons => {
+        // console.log('promise fulfilled')
+        setPersons(initialPersons)
+      })
+  }
+  
+  useEffect(hook, [])
 
   const filteredPersons = persons.filter(person =>
     person.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -22,20 +31,43 @@ const App = () => {
   const addPerson = (event) => {
     event.preventDefault()
 
-    const nameExists = persons.some(person => person.name === newName)
-    if (nameExists) {
-      alert(`${newName} is already added to phonebook`)
-      return
+    const existingPerson = persons.find(person => person.name === newName)
+
+    if (existingPerson) {
+      // If the number also matches, alert the user and exit
+      if (existingPerson.number === newPhone) {
+        alert(`${newName} and their phone ${newPhone} is already added to phonebook`)
+        return
+      }
+
+      // If the number is different, update the person's number
+      if (window.confirm(`${newName} is already in the phonebook, replace the old number with a new one?`)) {
+        const updatedPerson = { ...existingPerson, number: newPhone }
+        personServices
+        .updatePerson(existingPerson.id, updatedPerson)
+        .then(returnedPerson => {
+          setPersons(persons.map(person => person.id !== existingPerson.id ? person : returnedPerson))
+          setNewName('')
+          setNewPhone('')
+        })
+        return
+      }
     }
 
-    const noteObject = {
+    // If the name does not exist, add the person as usual
+    const personObject = {
       name: newName, 
-      number: newPhone,
-      id: persons.length + 1
+      number: newPhone
     }
-    setPersons(persons.concat(noteObject))
-    setNewName('')
-    setNewPhone('')
+
+    personServices
+      .createPerson(personObject)
+      .then(returnedPerson => {
+        setPersons(persons.concat(returnedPerson))
+        setNewName('')
+        setNewPhone('')
+      })
+
   }
 
   const handleNameChange = (event) => {
@@ -53,6 +85,26 @@ const App = () => {
     setSearchTerm(event.target.value)
   }
 
+  const deletePersonOf = id => {
+
+    const deletePerson = persons.find(p => p.id === id)
+
+    if (window.confirm(`Delete ${deletePerson.name}?`)) {
+
+      personServices
+      .deletePerson(id)
+      .then(() => setPersons(persons.filter(p => p.id !== id)))
+      .catch(error => {
+        alert(`Person '${deletePerson.name}' was already removed from server`)
+        setPersons(persons.filter(p => p.id !== id))
+      })
+
+    }
+
+    // console.log(`After axios.put method - notes length is ${notes.length}`)
+
+  }
+
   return (
     <div>
       <h2>Phonebook</h2>
@@ -60,7 +112,15 @@ const App = () => {
       <h3>add a new</h3>
       <PersonForm addPerson={addPerson} newName={newName} handleNameChange={handleNameChange} newPhone={newPhone} handlePhoneChange={handlePhoneChange} />
       <h3>Numbers</h3>
-      <Persons filteredPersons={filteredPersons} />
+      <div>
+        {filteredPersons.map(person => 
+          <Person
+            key={person.id} 
+            person={person}
+            deletePerson={() => deletePersonOf(person.id)}
+          />
+        )}
+      </div>
     </div>
   )
 }
