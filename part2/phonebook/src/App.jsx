@@ -60,10 +60,20 @@ const App = () => {
         })
         .catch(error => {
           // console.log('I am inside updatePerson catch error section')
-          setMessage(`Information of '${updatedPerson.name}' has already been removed from server`)
+          if (error.response.status === 400) {
+            // Validation error (invalid phone number)
+            setMessage(error.response.data.error)
+          } else if (error.response.status === 404) {
+            // Person not found (already removed from server)
+            setMessage(`Information of '${updatedPerson.name}' has already been removed from server`)
+            // Remove person from UI since it no longer exists in the backend
+            setPersons(persons.filter(person => person.id !== updatedPerson.id))
+          } else {
+            // Generic error message for unexpected issues
+            setMessage('Something went wrong. Please try again.')
+          }
           setMessageType('error')
-          setTimeout(() => {setMessage(null)}, 5000)
-          setPersons(persons.filter(p => p.id !== updatedPerson.id))
+          setTimeout(() => { setMessage(null) }, 5000)
         })
 
         return
@@ -86,7 +96,11 @@ const App = () => {
         setMessageType('notice')
         setTimeout(() => {setMessage(null)}, 5000)
       })
-
+      .catch(error => {
+        setMessage(`${error.response.data.error}`)
+        setMessageType('error')
+        setTimeout(() => {setMessage(null)}, 5000)
+      })
   }
 
   const handleNameChange = (event) => {
