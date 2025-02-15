@@ -1,0 +1,23 @@
+POST http://localhost:3001/api/blogs
+content-type: application/json
+
+{
+    "title": "My parents cancelled my birthday",
+    "author": "Samarth Deepak",
+    "url": "https://booknookuk.com/product/my-parents-cancelled-my-birthday-by-jo-simmons/",
+    "likes": 30
+}
+
+###
+POST http://localhost:3001/api/blogs
+content-type: application/json
+
+{
+    "title": "Girls can do anything!",
+    "author": "Shreya Deepak",
+    "url": "https://carylhart.com/bookshop/p/girls-can-do-anything",
+    "likes": 30
+}
+
+###
+GET http://localhost:3001/api/blogs
