@@ -3,7 +3,7 @@ content-type: application/json
 
 {
     "title": "My parents cancelled my birthday",
-    "author": "Samarth Deepak",
+    "author": "Sam D",
     "url": "https://booknookuk.com/product/my-parents-cancelled-my-birthday-by-jo-simmons/",
     "likes": 30
 }
@@ -14,7 +14,7 @@ content-type: application/json
 
 {
     "title": "Girls can do anything!",
-    "author": "Shreya Deepak",
+    "author": "Shr D",
     "url": "https://carylhart.com/bookshop/p/girls-can-do-anything",
     "likes": 30
 }
