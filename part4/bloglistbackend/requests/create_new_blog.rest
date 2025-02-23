@@ -5,7 +5,8 @@ content-type: application/json
     "title": "My parents cancelled my birthday",
     "author": "Sam D",
     "url": "https://booknookuk.com/product/my-parents-cancelled-my-birthday-by-jo-simmons/",
-    "likes": 30
+    "likes": 30,
+    "userId": "67bb14cc1041dca7c640b207"
 }
 
 ###
@@ -16,7 +17,20 @@ content-type: application/json
     "title": "Girls can do anything!",
     "author": "Shr D",
     "url": "https://carylhart.com/bookshop/p/girls-can-do-anything",
-    "likes": 30
+    "likes": 30,
+    "userId": "67bb14cc1041dca7c640b207"
+}
+
+###
+POST http://localhost:3001/api/blogs
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRyYWplbmQ5IiwiaWQiOiI2N2JiMTRjYzEwNDFkY2E3YzY0MGIyMDciLCJpYXQiOjE3NDAzMTgyMzQsImV4cCI6MTc0MDMyMTgzNH0.TP_DVprfu0kvlQODDZ0u2MUASK1R27YmR8Fm-wIxhpk
+
+{
+    "title": "Test Title!",
+    "author": "Test Author",
+    "url": "https://fullstackopen.com/en/part4/token_authentication#limiting-creating-new-notes-to-logged-in-users",
+    "likes": 5
 }
 
 ###

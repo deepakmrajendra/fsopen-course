@@ -1,4 +1,6 @@
 const Blog = require('../models/blog')
+const User = require('../models/user')
+const bcrypt = require('bcrypt')
 
 const initialBlogs = [
   {
@@ -14,6 +16,13 @@ const initialBlogs = [
     likes: 10
   }
 ]
+
+// Add initialUsers to establish the correct relationship
+const initialUsers = async () => {
+  const passwordHash = await bcrypt.hash('sekret', 10)
+  const user = new User({ username: 'root', passwordHash, })
+  return user
+}
 
 const nonExistingId = async () => {
   // Create a new temporary blog instance with minimal required fields to be deleted in the next step
@@ -33,4 +42,9 @@ const blogsInDb = async () => {
   return blogs.map(blog => blog.toJSON())
 }
 
-module.exports = { initialBlogs, nonExistingId, blogsInDb }
+const usersInDb = async () => {
+  const users = await User.find({})
+  return users.map(u => u.toJSON())
+}
+
+module.exports = { initialBlogs, initialUsers, nonExistingId, blogsInDb, usersInDb }
