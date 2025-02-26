@@ -1,0 +1,4 @@
+node_modules
+.env
+fly.toml
+postgres_creds.txt
