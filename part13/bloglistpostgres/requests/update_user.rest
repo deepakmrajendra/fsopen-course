@@ -1,0 +1,10 @@
+###
+PUT http://localhost:3001/api/users/drajend9
+Content-Type: application/json
+
+{
+  "newUsername": "drajend9.test@gmail.com"
+}
+
+###
+GET http://localhost:3001/api/users

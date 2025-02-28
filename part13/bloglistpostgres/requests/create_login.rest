@@ -1,0 +1,17 @@
+###
+POST http://localhost:3001/api/login
+content-type: application/json
+
+{
+    "username": "drajend9.test@gmail.com",
+    "password": "hgjyu42&"
+}
+
+###
+POST http://localhost:3001/api/login
+content-type: application/json
+
+{
+    "username": "rshm.test@yahoo.com",
+    "password": "qwplm12$"
+}

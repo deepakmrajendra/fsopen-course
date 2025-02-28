@@ -1,0 +1,21 @@
+POST http://localhost:3001/api/users
+content-type: application/json
+
+{
+    "username": "drajend9",
+    "name": "Deepak R",
+    "password": "hgjyu42&"
+}
+
+###
+POST http://localhost:3001/api/users
+content-type: application/json
+
+{
+    "username": "rshm.test@yahoo.com",
+    "name": "Resh K",
+    "password": "qwplm12$"
+}
+
+###
+GET http://localhost:3001/api/users
