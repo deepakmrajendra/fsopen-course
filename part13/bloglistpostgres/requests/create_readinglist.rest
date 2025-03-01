@@ -1,0 +1,53 @@
+###
+POST http://localhost:3001/api/readinglists
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRyYWplbmQ5QHRlc3QuY29tIiwiaWQiOjEsImlhdCI6MTc0MDgyODU1MiwiZXhwIjoxNzQwODMyMTUyfQ.ItuQTuyHTk5fdvAESIUNfpgUjtPJBF95CorCRj2-2ko
+
+{
+  "blogId": 4
+}
+
+###
+POST http://localhost:3001/api/readinglists
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRyYWplbmQ5QHRlc3QuY29tIiwiaWQiOjEsImlhdCI6MTc0MDgyODU1MiwiZXhwIjoxNzQwODMyMTUyfQ.ItuQTuyHTk5fdvAESIUNfpgUjtPJBF95CorCRj2-2ko
+
+{
+  "blogId": 5
+}
+
+###
+POST http://localhost:3001/api/readinglists
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJzaG0udGVzdEB5YWhvby5jb20iLCJpZCI6MiwiaWF0IjoxNzQwODI4NTk0LCJleHAiOjE3NDA4MzIxOTR9.D7KBIPXRudMam3CgDzWi-aT2WWhKk0DjGWShG0lDzQs
+
+{
+  "blogId": 1
+}
+
+###
+POST http://localhost:3001/api/readinglists
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJzaG0udGVzdEB5YWhvby5jb20iLCJpZCI6MiwiaWF0IjoxNzQwODI4NTk0LCJleHAiOjE3NDA4MzIxOTR9.D7KBIPXRudMam3CgDzWi-aT2WWhKk0DjGWShG0lDzQs
+
+{
+  "blogId": 2
+}
+
+###
+POST http://localhost:3001/api/readinglists
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOjMsImlhdCI6MTc0MDg0NzkwOCwiZXhwIjoxNzQwODUxNTA4fQ.oc58hallUhNFH9rIPJSk8D1Zh8nmbVPMOqfIQyi0L3g
+
+{
+  "blogId": 5
+}
+
+###
+POST http://localhost:3001/api/readinglists
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOjMsImlhdCI6MTc0MDg0NzkwOCwiZXhwIjoxNzQwODUxNTA4fQ.oc58hallUhNFH9rIPJSk8D1Zh8nmbVPMOqfIQyi0L3g
+
+{
+  "blogId": 2
+}

@@ -23,73 +23,105 @@ content-type: application/json
 ###
 POST http://localhost:3001/api/blogs
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJzaG0udGVzdEB5YWhvby5jb20iLCJpZCI6MiwiaWF0IjoxNzQwNzUyNDc2LCJleHAiOjE3NDA3NTYwNzZ9.PCWGhBbl_inBw1QrIwWK_cX2wz19yBWKMUp8vZ0Beu8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJzaG0udGVzdEB5YWhvby5jb20iLCJpZCI6MiwiaWF0IjoxNzQwODEyNzA4LCJleHAiOjE3NDA4MTYzMDh9.nHIlq64rDUNbA8F2Cls_lxkszHpwOPeZnrBLIZ2BqkE
 
 {
     "author": "Sam D",
     "url": "https://booknookuk.com/product/my-parents-cancelled-my-birthday-by-jo-simmons/",
     "title": "My parents cancelled my birthday",
-    "likes": 30
+    "likes": 20,
+    "year": 1992
 }
 
 ###
 POST http://localhost:3001/api/blogs
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRyYWplbmQ5LnRlc3RAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTc0MDc1MjMzNCwiZXhwIjoxNzQwNzU1OTM0fQ.dH84fkNhwczPkidpNrhOW2PkUEa_ev0g7nNngYBVMOM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRyYWplbmQ5QHRlc3QuY29tIiwiaWQiOjEsImlhdCI6MTc0MDgxMjY0NiwiZXhwIjoxNzQwODE2MjQ2fQ.XPQBxNIYcaGYqm395ZItWep5BVnxVwQy1auod963owM
 
 {
     "author": "Shr D",
     "url": "https://carylhart.com/bookshop/p/girls-can-do-anything",
     "title": "Girls can do anything!",
-    "likes": 30
+    "likes": 40,
+    "year": 2025
 }
 
 ###
 POST http://localhost:3001/api/blogs
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRyYWplbmQ5LnRlc3RAZ21haWwuY29tIiwiaWQiOjEsImlhdCI6MTc0MDc1NjQ1NSwiZXhwIjoxNzQwNzYwMDU1fQ.0smPuLNJ0nFzQN_m6H4Kxz0FuPxLy7h-FraDqQhYKjI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRyYWplbmQ5QHRlc3QuY29tIiwiaWQiOjEsImlhdCI6MTc0MDgxMjY0NiwiZXhwIjoxNzQwODE2MjQ2fQ.XPQBxNIYcaGYqm395ZItWep5BVnxVwQy1auod963owM
 
 {
-    "author": "author name",
+    "author": "Shr D",
     "url": "https://authorname.com/",
     "title": "react is easy to learn",
-    "likes": 10
+    "likes": 1,
+    "year": 1991
 }
 
 ###
 POST http://localhost:3001/api/blogs
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJzaG0udGVzdEB5YWhvby5jb20iLCJpZCI6MiwiaWF0IjoxNzQwNzU2NjE4LCJleHAiOjE3NDA3NjAyMTh9.UP7xeaxgVVn6OGOnC__-tDhbRmqK55totUMNuVzn-rU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRyYWplbmQ5QHRlc3QuY29tIiwiaWQiOjEsImlhdCI6MTc0MDgxMjY0NiwiZXhwIjoxNzQwODE2MjQ2fQ.XPQBxNIYcaGYqm395ZItWep5BVnxVwQy1auod963owM
 
 {
     "author": "jami in the author name",
     "url": "https://jamiauthor.com/",
     "title": "title",
-    "likes": 10
+    "likes": 2,
+    "year": 2001
 }
 
 ###
 POST http://localhost:3001/api/blogs
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJzaG0udGVzdEB5YWhvby5jb20iLCJpZCI6MiwiaWF0IjoxNzQwNzU2NjE4LCJleHAiOjE3NDA3NjAyMTh9.UP7xeaxgVVn6OGOnC__-tDhbRmqK55totUMNuVzn-rU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJzaG0udGVzdEB5YWhvby5jb20iLCJpZCI6MiwiaWF0IjoxNzQwODEyNzA4LCJleHAiOjE3NDA4MTYzMDh9.nHIlq64rDUNbA8F2Cls_lxkszHpwOPeZnrBLIZ2BqkE
 
 {
-    "author": "author",
+    "author": "Sam D",
     "url": "https://jamititle.com/",
     "title": "jami in the title",
-    "likes": 10
+    "likes": 3,
+    "year": 2011
 }
 
 ###
 POST http://localhost:3001/api/blogs
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJzaG0udGVzdEB5YWhvby5jb20iLCJpZCI6MiwiaWF0IjoxNzQwNzU4NDk2LCJleHAiOjE3NDA3NjIwOTZ9.QZL3RAlZbGHWux65FCzU5-KSgrcdfg6dYR9UBvRXTZE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJzaG0udGVzdEB5YWhvby5jb20iLCJpZCI6MiwiaWF0IjoxNzQwODEyNzA4LCJleHAiOjE3NDA4MTYzMDh9.nHIlq64rDUNbA8F2Cls_lxkszHpwOPeZnrBLIZ2BqkE
 
 {
-    "author": "author",
+    "author": "Sam D",
     "url": "https://jamititle.com/",
     "title": "test title",
-    "likes": 10
+    "likes": 4,
+    "year": 2021
+}
+
+###
+POST http://localhost:3001/api/blogs
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOjMsImlhdCI6MTc0MDg0NzY5MiwiZXhwIjoxNzQwODUxMjkyfQ.qr2vfojPTjmbwNJb3Q0ks9OjPovYnPhvdIcIzfZPxt4
+
+{
+    "author": "Test Author",
+    "url": "https://testauthor.com/",
+    "title": "No title",
+    "likes": 5,
+    "year": 2021
+}
+
+###
+POST http://localhost:3001/api/blogs
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwiaWQiOjMsImlhdCI6MTc0MDg0NzY5MiwiZXhwIjoxNzQwODUxMjkyfQ.qr2vfojPTjmbwNJb3Q0ks9OjPovYnPhvdIcIzfZPxt4
+
+{
+    "author": "Test Author2",
+    "url": "https://testauthor2.com/",
+    "title": "No title2",
+    "likes": 6,
+    "year": 2021
 }
 
 ###

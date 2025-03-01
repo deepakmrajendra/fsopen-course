@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt')
 const router = require('express').Router()
 
-const { Blog, User } = require('../models')
+const { Blog, User, ReadingList } = require('../models')
 
 router.get('/', async (req, res) => {
   const users = await User.findAll({
@@ -23,12 +23,50 @@ router.post('/', async (req, res) => {
 })
 
 router.get('/:id', async (req, res) => {
-  const user = await User.findByPk(req.params.id)
-  if (user) {
-    res.json(user)
-  } else {
-    res.status(404).end({ error: 'User not found' })
+
+  const { read } = req.query
+  const where = {}
+
+  // Validate the read query parameter (it must be 'true' or 'false' if provided)
+  if (read !== undefined) {
+    if (read !== 'true' && read !== 'false') {
+      return res.status(400).json({ error: "Invalid query parameter: 'read' must be 'true' or 'false'" })
+    }
+    where.read = read === 'true'
   }
+
+  const user = await User.findByPk(req.params.id, {
+    attributes: { exclude: ['passwordhash', 'createdAt', 'updatedAt'] },
+    include: {
+      model: Blog,
+      as: 'readings',
+      through: { attributes: ['id', 'read'], where },
+      attributes: ['id', 'url', 'title', 'author', 'likes', 'year']
+    }
+  })
+  if (!user) {
+    return res.status(404).json({ error: 'User not found' })
+  }
+
+  // Format the response according to the expected structure
+  const response = {
+    name: user.name,
+    username: user.username,
+    readings: user.readings.map(blog => ({
+      id: blog.id,
+      url: blog.url,
+      title: blog.title,
+      author: blog.author,
+      likes: blog.likes,
+      year: blog.year,
+      readinglists: blog.reading_lists ? [{ 
+        read: blog.reading_lists.read, 
+        id: blog.reading_lists.id 
+      }] : []
+    }))
+  }
+
+  res.json(response)
 })
 
 router.put('/:username', async (req, res, next) => {

@@ -2,7 +2,7 @@ POST http://localhost:3001/api/users
 content-type: application/json
 
 {
-    "username": "drajend9",
+    "username": "drajend9@test.com",
     "name": "Deepak R",
     "password": "hgjyu42&"
 }
@@ -15,6 +15,16 @@ content-type: application/json
     "username": "rshm.test@yahoo.com",
     "name": "Resh K",
     "password": "qwplm12$"
+}
+
+### Create a New User to test test the new session-based authentication and user access revocation functionalities
+POST http://localhost:3001/api/users
+Content-Type: application/json
+
+{
+  "username": "testuser@example.com",
+  "name": "Test User",
+  "password": "securepassword"
 }
 
 ###

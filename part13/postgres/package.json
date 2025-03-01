@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
+    "migration:down": "node utils/rollback.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Deepak Rajendrappa",
@@ -15,7 +16,8 @@
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
     "pg": "^8.13.3",
-    "sequelize": "^6.37.5"
+    "sequelize": "^6.37.5",
+    "umzug": "^3.8.2"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"

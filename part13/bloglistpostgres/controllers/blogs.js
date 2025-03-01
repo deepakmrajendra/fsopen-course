@@ -2,7 +2,7 @@ const router = require('express').Router()
 const jwt = require('jsonwebtoken')
 
 const { Blog, User } = require('../models')
-const { SECRET } = require('../utils/config')
+const { tokenExtractor } = require('../utils/middleware')
 
 const { Op } = require('sequelize')
 
@@ -28,24 +28,13 @@ router.get('/', async (req, res) => {
 })
 
 
-const tokenExtractor = (req, res, next) => {
-  const authorization = req.get('authorization')
-  if (authorization && authorization.toLowerCase().startsWith('bearer ')) {
-    try {
-      req.decodedToken = jwt.verify(authorization.substring(7), SECRET)
-    } catch{
-      return res.status(401).json({ error: 'token invalid' })
-    }
-  }  else {
-    return res.status(401).json({ error: 'token missing' })
-  }
-  next()
-}
-
 router.post('/', tokenExtractor, async (req, res) => {
   const user = await User.findByPk(req.decodedToken.id)
+  if (!user) {
+    return res.status(401).json({ error: 'User not found' });
+  }
   const blog = await Blog.create({...req.body, userId: user.id })
-  return res.json(blog)
+  return res.status(201).json(blog)
 })
 
 
@@ -72,21 +61,6 @@ router.put('/:id', blogFinder, async (req, res) => {
   req.blog.likes = req.body.likes
   await req.blog.save()
   res.json({ likes: req.blog.likes })
-})
-
-
-router.get('/authors', async (req, res) => {
-  const authors = await Blog.findAll({
-    attributes: [
-      'author',
-      [fn('COUNT', col('author')), 'articles'],  // Count blogs per author
-      [fn('SUM', col('likes')), 'likes']         // Sum total likes per author
-    ],
-    group: ['author'],                          // Group by author
-    order: [[fn('SUM', col('likes')), 'DESC']]  // Order by total likes DESC
-  })
-
-  res.json(authors)
 })
 
 module.exports = router

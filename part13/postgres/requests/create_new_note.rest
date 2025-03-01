@@ -21,7 +21,7 @@ content-type: application/json
 ###
 POST http://localhost:3001/api/notes
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRyYWplbmQ5IiwiaWQiOjEsImlhdCI6MTc0MDU5MTM0MX0.m976oKTpwK-iVUblF8sL9oEK0hAKS45YUS_xKLan6Tw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRyYWplbmQ5IiwiaWQiOjEsImlhdCI6MTc0MDc3MDc4Nn0.UvJcFORj_nXiLL8kQwOL3AglkxOz2TXGX2lK2-LDhck
 
 {
     "content": "MongoDB is webscale",
@@ -31,9 +31,29 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRyY
 ###
 POST http://localhost:3001/api/notes
 content-type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRyYWplbmQ5IiwiaWQiOjEsImlhdCI6MTc0MDU5MTM0MX0.m976oKTpwK-iVUblF8sL9oEK0hAKS45YUS_xKLan6Tw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRyYWplbmQ5IiwiaWQiOjEsImlhdCI6MTc0MDc3MDc4Nn0.UvJcFORj_nXiLL8kQwOL3AglkxOz2TXGX2lK2-LDhck
 
 {
     "content": "Relational databases rule the world",
+    "important": true
+}
+
+###
+POST http://localhost:3001/api/notes
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJzaG04NyIsImlkIjoyLCJpYXQiOjE3NDA3NzA5MjZ9.Na-PaXHlMHM_rCohB0rfI9S4ND7JE0Rc4qvyrjSKvjY
+
+{
+    "content": "Note 1 content",
+    "important": false
+}
+
+###
+POST http://localhost:3001/api/notes
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJzaG04NyIsImlkIjoyLCJpYXQiOjE3NDA3NzA5MjZ9.Na-PaXHlMHM_rCohB0rfI9S4ND7JE0Rc4qvyrjSKvjY
+
+{
+    "content": "Note 2 content",
     "important": true
 }

@@ -1,3 +1,4 @@
+###
 POST http://localhost:3001/api/users
 content-type: application/json
 
@@ -7,6 +8,37 @@ content-type: application/json
     "password": "secret"
 }
 
+
+###
+POST http://localhost:3001/api/users
+content-type: application/json
+
+{
+    "username": "rshm87",
+    "name": "Rshm K",
+    "password": "secret"
+}
+
+
+###
+POST http://localhost:3001/api/users
+content-type: application/json
+
+{
+    "username": "samd12",
+    "name": "Sam D",
+    "password": "secret"
+}
+
+###
+POST http://localhost:3001/api/users
+content-type: application/json
+
+{
+    "username": "shrd34",
+    "name": "Shr D",
+    "password": "sec"
+}
 
 ###
 GET http://localhost:3001/api/users

@@ -3,7 +3,7 @@ POST http://localhost:3001/api/login
 content-type: application/json
 
 {
-    "username": "drajend9.test@gmail.com",
+    "username": "drajend9@test.com",
     "password": "hgjyu42&"
 }
 
@@ -14,4 +14,13 @@ content-type: application/json
 {
     "username": "rshm.test@yahoo.com",
     "password": "qwplm12$"
+}
+
+### Login and get JWT Token
+POST http://localhost:3001/api/login
+Content-Type: application/json
+
+{
+  "username": "testuser@example.com",
+  "password": "securepassword"
 }
