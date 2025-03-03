@@ -6,3 +6,30 @@ content-type: application/json
     "username": "drajend9",
     "password": "hgjyu42&"
 }
+
+###
+POST http://localhost:3001/api/login
+content-type: application/json
+
+{
+    "username": "samarthd16",
+    "password": "qazxsw12!"
+}
+
+###
+POST http://localhost:3001/api/login
+content-type: application/json
+
+{
+    "username": "shreyad18",
+    "password": "plmnko12!"
+}
+
+###
+POST http://localhost:3001/api/login
+content-type: application/json
+
+{
+    "username": "reshmap8",
+    "password": "jdahfdf12$"
+}

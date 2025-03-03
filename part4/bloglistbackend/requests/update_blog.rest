@@ -1,0 +1,11 @@
+PUT http://localhost:3001/api/blogs/67c54af554081890573d2fe3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRyYWplbmQ5IiwiaWQiOiI2N2JiMTRjYzEwNDFkY2E3YzY0MGIyMDciLCJpYXQiOjE3NDA5OTU0ODUsImV4cCI6MTc0MDk5OTA4NX0.GIatTiRpz4bHTNxUAoDc4tdv4PhYNpPDIZ0qUK072OY
+
+{
+  "title": "Hair Comes the Bride",
+  "author": "Reshma K",
+  "url": "https://www.haircomesthebride.com/blog",
+  "likes": 15,
+  "user": "67bb14cc1041dca7c640b207"
+}

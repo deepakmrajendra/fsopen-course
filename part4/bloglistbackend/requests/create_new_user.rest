@@ -8,6 +8,36 @@ content-type: application/json
     "password": "hgjyu42&"
 }
 
+###
+POST http://localhost:3001/api/users
+content-type: application/json
+
+{
+    "username": "samarthd16",
+    "name": "Samarth D",
+    "password": "qazxsw12!"
+}
+
+###
+POST http://localhost:3001/api/users
+content-type: application/json
+
+{
+    "username": "shreyad18",
+    "name": "Shreya D",
+    "password": "plmnko12!"
+}
+
+###
+POST http://localhost:3001/api/users
+content-type: application/json
+
+{
+    "username": "reshmap8",
+    "name": "Reshma P",
+    "password": "jdahfdf12$"
+}
+
 
 ###
 GET http://localhost:3001/api/users
