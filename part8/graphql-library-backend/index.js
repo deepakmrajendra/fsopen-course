@@ -202,7 +202,7 @@ const resolvers = {
       if (args.genre) {
         query.genres = { $in: [args.genre] }
       }
-      return await Book.find(query).populate('author', { name: 1 })
+      return await Book.find(query).populate('author', { name: 1, born: 1})
     },
     
     // allAuthors: () => {
@@ -321,7 +321,8 @@ const resolvers = {
       }
       try {
         const newBook = new Book({ ...args, author: author._id })
-        return await newBook.save()
+        await newBook.save()
+        return await newBook.populate('author')
       } catch (error) {
         // Handle specific Mongoose validation errors
         if (error.name === 'ValidationError') {
