@@ -48,25 +48,25 @@ const Blog = ({ blog, blogs, setBlogs, user }) => {
   }
 
   return (
-    <div style={blogStyle}>
-      <div>
+    <div style={blogStyle} className="blog">
+      <div className="blogSummary">
         {blog.title} {blog.author}
         <button onClick={toggleVisibility}>
           {visible ? 'hide' : 'view'}
         </button>
       </div>
       {visible && (
-        <div>
-          <p>
+        <div className="blogDetails">
+          <p className="blogUrl">
             <a href={blog.url} target="_blank" rel="noopener noreferrer">
               {blog.url}
             </a>
           </p>
-          <p>
+          <p className="blogLikes">
             likes {blog.likes}
             <button onClick={handleLike}>like</button>
           </p>
-          <p>{blog.user?.name || 'Unknown'}</p>
+          <p className="blogUser">{blog.user?.name || 'Unknown'}</p>
           {user?.username === blog.user?.username && (
             <button onClick={handleDelete} style={{ background: 'red', color: 'white' }}>
               remove
