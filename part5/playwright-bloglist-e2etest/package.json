@@ -1,0 +1,16 @@
+{
+  "name": "playwright-bloglist-e2etest",
+  "version": "1.0.0",
+  "description": "Playwright E2E testing of bloglist application",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:report": "playwright show-report"
+  },
+  "author": "Deepak Rajendrappa",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.51.0",
+    "@types/node": "^22.13.10"
+  }
+}

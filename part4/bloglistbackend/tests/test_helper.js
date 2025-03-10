@@ -20,7 +20,7 @@ const initialBlogs = [
 // Add initialUsers to establish the correct relationship
 const initialUsers = async () => {
   const passwordHash = await bcrypt.hash('sekret', 10)
-  const user = new User({ username: 'root', passwordHash, })
+  const user = new User({ username: 'root', name: 'Superuser', passwordHash, })
   return user
 }
 
