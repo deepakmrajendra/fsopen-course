@@ -6,3 +6,58 @@ Content-Type: application/json
   "text": "Write documentation",
   "done": false
 }
+
+### Create a new todo for testing redis counter at http://localhost:3000/statistics
+POST http://localhost:3000/todos
+Content-Type: application/json
+
+{
+  "text": "Test Redis Counter 1",
+  "done": false
+}
+
+###
+POST http://localhost:3000/todos
+Content-Type: application/json
+
+{
+  "text": "Test Redis Counter 2",
+  "done": false
+}
+
+###
+POST http://localhost:3000/todos
+Content-Type: application/json
+
+{
+  "text": "Test Redis Counter 3 - post setting of counter value via redis-cli",
+  "done": true
+}
+
+###
+POST http://localhost:3000/todos
+Content-Type: application/json
+
+{
+  "text": "Test Redis Counter 4 - post deletion of counter key added_todos via redis-cli",
+  "done": true
+}
+
+###
+POST http://localhost:3000/todos
+Content-Type: application/json
+
+{
+  "text": "Test Redis Counter 5 - post persisting redis data through --appendonly in yml file ",
+  "done": true
+}
+
+
+###
+POST http://localhost:3000/todos
+Content-Type: application/json
+
+{
+  "text": "Test Redis Counter 6 - another one post persisting redis data through --appendonly in yml file",
+  "done": true
+}

@@ -63,3 +63,5 @@ typings/
 mongo_data/
 
 .dockerignore
+
+redis_data/
