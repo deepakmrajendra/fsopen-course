@@ -1,0 +1,2 @@
+### Get a single todo
+GET http://localhost:3000/todos/67cfcfd6eef9404b0f1d038d

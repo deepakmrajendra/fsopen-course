@@ -1,0 +1,2 @@
+### Get all todos
+GET http://localhost:3000/todos
