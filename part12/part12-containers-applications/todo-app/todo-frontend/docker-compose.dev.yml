@@ -1,0 +1,14 @@
+services:
+  app:
+    image: todo-frontend-dev  # Name of the Docker image
+    build:
+      context: .  # Use the current directory as build context
+      dockerfile: dev.Dockerfile  # Use the development Dockerfile
+    volumes:
+      - ./:/usr/src/app  # Sync project files for hot reloading
+      - /usr/src/app/node_modules  # Prevent node_modules conflicts (Mac M1/M2 fix)
+    ports:
+      - 5173:5173  # Map Vite’s dev server port
+    container_name: todo-frontend-dev  # Name the container for easy access
+    environment:
+      - VITE_BACKEND_URL=http://localhost:3000  # Pass backend URL to frontend
