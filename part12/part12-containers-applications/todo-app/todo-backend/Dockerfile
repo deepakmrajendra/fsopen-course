@@ -6,8 +6,11 @@ COPY --chown=node:node . .
 
 RUN npm ci --omit=dev
 
+ENV NODE_ENV=production
 ENV DEBUG=todo-backend:*
 
 USER node
 
-CMD npm start
+EXPOSE 3000
+
+CMD ["npm", "start"]
