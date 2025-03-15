@@ -1,0 +1,10 @@
+POST http://localhost:3000/api/patients
+content-type: application/json
+
+{
+    "name": "Deepak Rajendrappa",
+    "dateOfBirth": "1985-02-99",
+    "ssn": "90898-JASKAS",
+    "gender": "male",
+    "occupation": "Software engineer"
+}
