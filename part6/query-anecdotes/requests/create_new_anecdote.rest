@@ -1,0 +1,11 @@
+###
+POST http://localhost:3001/anecdotes
+content-type: application/json
+
+{
+    "content": "This is a valid anecdote",
+    "votes": 0
+}
+
+###
+DELETE http://localhost:3001/anecdotes/ylWkzH6
